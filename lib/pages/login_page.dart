@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+
+  final String name;
+ 
+  const LoginPage({super.key,required this.name});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
+  int yosh=21;
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(onPressed: (){
+
+        Navigator.pop(context,yosh);
+      },child: const Icon(Icons.favorite),),
+      body: Center(child: Text("${widget.name}"),),
+    );
   }
 }

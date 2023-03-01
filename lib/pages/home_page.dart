@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lesson5/pages/login_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -9,6 +10,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int son = 0;
+
+  String name = "Mehriddin";
+  int yosh = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -36,16 +40,27 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: const Center(
-        child: Text("NemNig"),
+      body: Center(
+        child: Text("$yosh"),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          print("Floating action button bosildi");
+        onPressed: () async {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => LoginPage(
+                name: name,
+              ),
+            ),
+          ).then((value) {
+            setState(() {
+              yosh = value;
+            });
+          });
+          // Navigator.pop(context); orqaga
         },
         child: const Icon(Icons.add),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
     );
   }
 }
