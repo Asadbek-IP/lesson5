@@ -17,7 +17,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.cyan,
       appBar: AppBar(
         toolbarHeight: 70,
         elevation: 0,
@@ -41,24 +40,30 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: Center(
-        child: Text("$yosh"),
+        child: ElevatedButton(
+          style: ButtonStyle(
+              shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)))),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => LoginPage(
+                  name: name,
+                ),
+              ),
+            ).then((value) {
+              setState(() {
+                yosh = value;
+              });
+            });
+            // Navigator.pop(context); orqaga
+          },
+          child: const Text("Kirish"),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => LoginPage(
-                name: name,
-              ),
-            ),
-          ).then((value) {
-            setState(() {
-              yosh = value;
-            });
-          });
-          // Navigator.pop(context); orqaga
-        },
+        onPressed: () async {},
         child: const Icon(Icons.add),
       ),
     );
