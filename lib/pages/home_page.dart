@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lesson5/pages/login_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -39,29 +38,17 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: Center(
-        child: ElevatedButton(
-          style: ButtonStyle(
-              shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20)))),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => LoginPage(
-                  name: name,
-                ),
-              ),
-            ).then((value) {
-              setState(() {
-                yosh = value;
-              });
-            });
-            // Navigator.pop(context); orqaga
-          },
-          child: const Text("Kirish"),
-        ),
-      ),
+      body: const Center(
+          child: Text(
+        "Mehriddin dssd",
+        style: TextStyle(
+            fontSize: 25,
+            color: Colors.cyan,
+            backgroundColor: Colors.amber,
+            fontWeight: FontWeight.w600,
+            letterSpacing: 3,
+            wordSpacing: 10),
+      )),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {},
         child: const Icon(Icons.add),
