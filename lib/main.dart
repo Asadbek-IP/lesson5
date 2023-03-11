@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lesson5/pages/button_page.dart';
-import 'package:lesson5/pages/full.dart';
-import 'package:lesson5/pages/home_page.dart';
-import 'package:lesson5/pages/image_page.dart';
-import 'package:lesson5/pages/less.dart';
+import 'package:lesson5/pages/expanded_page.dart';
 
 void main(List<String> args) {
-  runApp(MeningIlovam());
+  runApp(const MeningIlovam());
 }
 
 class MeningIlovam extends StatefulWidget {
@@ -19,6 +15,6 @@ class MeningIlovam extends StatefulWidget {
 class _MeningIlovamState extends State<MeningIlovam> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: ButtonPage());
+    return const MaterialApp(home: ExpandedPage());
   }
 }
