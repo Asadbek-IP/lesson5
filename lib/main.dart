@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lesson5/pages/expanded_page.dart';
+import 'package:lesson5/pages/gridpage.dart';
+import 'package:lesson5/pages/mypageview.dart';
+import 'package:lesson5/pages/mytabbar.dart';
 
 void main(List<String> args) {
   runApp(const MeningIlovam());
@@ -15,6 +17,6 @@ class MeningIlovam extends StatefulWidget {
 class _MeningIlovamState extends State<MeningIlovam> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: ExpandedPage());
+    return const MaterialApp(home: MyTabBar());
   }
 }

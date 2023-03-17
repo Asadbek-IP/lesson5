@@ -6,7 +6,8 @@ class ExpandedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Row(
+      body: SafeArea(
+          child: Row(
         children: [
           Expanded(
             flex: 2,
@@ -21,7 +22,7 @@ class ExpandedPage extends StatelessWidget {
             ),
           ),
         ],
-      ),
+      )),
     );
   }
 }
